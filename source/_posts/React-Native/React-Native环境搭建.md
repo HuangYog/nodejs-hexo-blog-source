@@ -8,6 +8,8 @@ categories:
  - 日志
  - 笔记
 ---
+`在搭建React-Native 开发Android环境的时候请先搭建好Android 的开发环境`可以参考 {% link android开发环境搭建 /2016/07/12/android开发环境搭建/ %}
+
 ## 一 React Native配置安装
 React-Native 是什么这里就不多说了(是伟大的facebook 开源项目),这里就直接开始，直入主题。
 {% link React-Native 项目的官网 http://facebook.github.io/react-native/ %}
@@ -82,3 +84,5 @@ $ npm install -g react-native-cli
     - cd RNAppProject,路径切换到项目主目录
     - sudo react-native start 启动PC端的React服务
     - react-native run-android进行加载运行android 应用
+
+以上就是react-native android开发环境的搭建，如果途中出现各种问题可以查考{% link 这篇文章 http://blog.csdn.net/p106786860/article/details/51052299 %}
