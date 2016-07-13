@@ -8,7 +8,7 @@ categories:
  - 日志
  - 笔记
 ---
-`在搭建React-Native 开发Android环境的时候请先搭建好Android 的开发环境`可以参考 {% link android开发环境搭建 /2016/07/12/android开发环境搭建/ %}
+`在搭建React-Native 开发Android环境的时候请先搭建好Android 的开发环境`可以参考 {% link android开发环境搭建 http://ty52u.cn/2016/07/12/android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/ %}
 
 ## 一 React Native配置安装
 React-Native 是什么这里就不多说了(是伟大的facebook 开源项目),这里就直接开始，直入主题。
