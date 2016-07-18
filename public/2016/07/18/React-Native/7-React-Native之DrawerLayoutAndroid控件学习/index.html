@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="huangyong" />
+
+
+
+<meta name="description" content="本文查考From Sky丶清（http://www.lcode.org/） 的 React Native专题
+1.DrawerLayoutAndroid组件是对Android 平台的DrawerLayout控件的封装DrawerLayoutAndroid组件是对Android 平台的DrawerLayout控件的封装，这个抽屉页面经常用于导航页面，通过renderNavigationView进行渲">
+<meta property="og:type" content="article">
+<meta property="og:title" content="7.React-Native之DrawerLayoutAndroid控件学习">
+<meta property="og:url" content="ty52u.cn/2016/07/18/React-Native/7-React-Native之DrawerLayoutAndroid控件学习/index.html">
+<meta property="og:site_name" content="HuangYong Blog">
+<meta property="og:description" content="本文查考From Sky丶清（http://www.lcode.org/） 的 React Native专题
+1.DrawerLayoutAndroid组件是对Android 平台的DrawerLayout控件的封装DrawerLayoutAndroid组件是对Android 平台的DrawerLayout控件的封装，这个抽屉页面经常用于导航页面，通过renderNavigationView进行渲">
+<meta property="og:image" content="ty52u.cn/images/2016-07-1811-44-17.png">
+<meta property="og:image" content="ty52u.cn/images/2016-07-1811-45-54.png">
+<meta property="og:image" content="ty52u.cn/images/2016-07-1815-10-32.png">
+<meta property="og:image" content="ty52u.cn/images/2016-07-1815-10-15.png">
+<meta property="og:updated_time" content="2016-07-18T07:11:28.087Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="7.React-Native之DrawerLayoutAndroid控件学习">
+<meta name="twitter:description" content="本文查考From Sky丶清（http://www.lcode.org/） 的 React Native专题
+1.DrawerLayoutAndroid组件是对Android 平台的DrawerLayout控件的封装DrawerLayoutAndroid组件是对Android 平台的DrawerLayout控件的封装，这个抽屉页面经常用于导航页面，通过renderNavigationView进行渲">
+<meta name="twitter:image" content="ty52u.cn/images/2016-07-1811-44-17.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternative" href="/atom.xml" title="HuangYong Blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>7.React-Native之DrawerLayoutAndroid控件学习 | HuangYong Blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        open_in_new: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">huangyong</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">新的开始</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/随笔">随笔</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:hy873872182@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/i/2124234337" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="http://github.com/HuangYog" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa Google" target="_blank" href="mailto:hy873872182@gmail.com" title="Google"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DrawerLayoutAndroid/">DrawerLayoutAndroid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Express/">Express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ProgressBarAndroid/">ProgressBarAndroid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/">React-Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ScrollView/">ScrollView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Text/">Text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/View/">View</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-plugins/">atom-plugins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express4/">express4.*</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-native/">react-native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的Blog/">我的Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">huangyong</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">huangyong</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">新的开始</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/随笔">随笔</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:hy873872182@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/i/2124234337" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="http://github.com/HuangYog" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa Google" target="_blank" href="mailto:hy873872182@gmail.com" title="Google"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-React-Native/7-React-Native之DrawerLayoutAndroid控件学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/18/React-Native/7-React-Native之DrawerLayoutAndroid控件学习/" class="article-date">
+      <time datetime="2016-07-18T02:43:00.000Z" itemprop="datePublished">2016-07-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      7.React-Native之DrawerLayoutAndroid控件学习
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/日志/">日志</a><a class="article-category-link" href="/categories/日志/笔记/">笔记</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DrawerLayoutAndroid/">DrawerLayoutAndroid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React-Native</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>本文查考<code>From Sky丶清（http://www.lcode.org/）</code> 的 <a href="http://www.lcode.org/react-native/" target="_blank" rel="external">React Native专题</a></p>
+<h3 id="1-DrawerLayoutAndroid组件是对Android-平台的DrawerLayout控件的封装"><a href="#1-DrawerLayoutAndroid组件是对Android-平台的DrawerLayout控件的封装" class="headerlink" title="1.DrawerLayoutAndroid组件是对Android 平台的DrawerLayout控件的封装"></a>1.<code>DrawerLayoutAndroid</code>组件是对Android 平台的<code>DrawerLayout</code>控件的封装</h3><p><code>DrawerLayoutAndroid</code>组件是对Android 平台的<code>DrawerLayout</code>控件的封装，这个抽屉页面经常用于导航页面，通过renderNavigationView进行渲染，<code>DrawerLayoutAndroid</code>中的子视图会变成主视图.导航栏的视图在屏幕中一开始是隐藏的，但我们可以通过drawerPostition指定位置进行把导航视图拖拽出来，最终拖拽出来的距离大小可以使用drawWidth属性进行指定。<br>该控件试用起来比较简单，只需要熟悉一下其中的属性和方法即可，下面是一个官方的实例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">    var navigatiobView = (</span><br><span class="line">        &lt;View style = &#123;&#123;flex:1, backgroundColor:&apos;#fff&apos;&#125;&#125;&gt;</span><br><span class="line">          &lt;Text style=&#123;&#123;margin:10, fontSize: 15, textAlign:&apos;left&apos;&#125;&#125;&gt;</span><br><span class="line">            I&apos;m in the Drawer !</span><br><span class="line">          &lt;/Text&gt;</span><br><span class="line">        &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">    return (</span><br><span class="line">        &lt;DrawerLayoutAndroid drawerWidth = &#123;300&#125;</span><br><span class="line">          drawerPosition = &#123;DrawerLayoutAndroid.positions.Left&#125;</span><br><span class="line">          renderNavigationView = &#123;() =&gt; navigatiobView&#125;&gt;</span><br><span class="line">          &lt;View style=&#123;&#123;flex:1,alignItems:&apos;center&apos;&#125;&#125;&gt;</span><br><span class="line">            &lt;Text style=&#123;&#123;margin:10, fontSize:15,textAlign: &apos;right&apos;&#125;&#125;&gt;Hello&lt;/Text&gt;</span><br><span class="line">            &lt;Text style=&#123;&#123;margin:10, fontSize:15,textAlign:&apos;right&apos;&#125;&#125;&gt;World !&lt;/Text&gt;</span><br><span class="line">          &lt;/View&gt;</span><br><span class="line">         &lt;/DrawerLayoutAndroid&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行后看到的效果如下图所示:<br><img src="/images/2016-07-1811-44-17.png"><br>在屏幕上用手指从屏幕边缘从左到右滑动之后看到的效果如下:<br><img src="/images/2016-07-1811-45-54.png"></p>
+<h3 id="2-基本属性方法"><a href="#2-基本属性方法" class="headerlink" title="2.基本属性方法"></a>2.基本属性方法</h3><p>1.继承View控件的属性(宽和高,背景颜色,边距等相关属性样式)<br>2.<code>drawerPosition</code> 参数为枚举类型(<code>DrawerConsts. DrawerPosition.Left</code>,<code>DrawerConsts.DrawerPosition.Right</code>),进行指定导航菜单用哪一侧滑行出来，更具官方实例，最终传入的两个枚举值分别为:<code>DrawerLayoutAndroid.positioons.Left</code>和<code>DrawerLayoutAndroid.positioons.Right</code><br>3.<code>drawerWidth</code> 进行指定导航菜单视图的宽度，也就是说该侧面导航视图可以从屏幕边缘拖拽到屏幕的宽度距离<br>4.<code>keyboardDismissMode</code> 参数为枚举类型(‘none’,’on-drag’)进行指定在导航视图拖拽的过程中是否要隐藏键盘:</p>
+<ul>
+<li><code>none</code> 不隐藏键盘(默认)</li>
+<li><code>on-drag</code> 当拖拽开始的时候进行隐藏键盘<br>5.<code>onDrawerClose</code> function 方法当导航视图被关闭后进行回调方法<br>6.<code>onDrawerOpen</code> function 方法 当导航视图被打开后进行回调该方法<br>7.<code>onDrawerSlide</code> function 方法 当导航视图和用户进行交互时候调用该方法<br>8.<code>onDrawerStateChanged</code> function 方法，当导航视图状态发生变化的时候调用该方法，该方法会有三种状态:</li>
+<li><code>idle(空闲)</code> 表示导航视图上面没有任何交互状态</li>
+<li><code>dragging(正在拖拽中)</code> 表示该用户正在和导航视图发生交互动作</li>
+<li><code>setting(暂停-刚刚结束)</code>表示用户 刚刚结束和导航视图的交互动作，当前导航视图正在打开或者正常关闭拖拽滑动动画效果<br>9.<code>renderNavigationView</code> function 方法，该方法进行渲染一个导航抽屉视图(用于用户从屏幕边缘拖拽出来)</li>
+</ul>
+<h3 id="3-DrawerLayoutAndroid-使用实例"><a href="#3-DrawerLayoutAndroid-使用实例" class="headerlink" title="3.DrawerLayoutAndroid 使用实例"></a>3.DrawerLayoutAndroid 使用实例</h3><p>代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line">&apos;use strict&apos;;</span><br><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123;</span><br><span class="line">  AppRegistry,</span><br><span class="line">  StyleSheet,</span><br><span class="line">  Text,</span><br><span class="line">  View,</span><br><span class="line">  DrawerLayoutAndroid</span><br><span class="line">&#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">class RNAppDrawerLayout extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    var navigatiobView = (</span><br><span class="line">        &lt;View style = &#123;&#123;flex:3, backgroundColor:&apos;green&apos;&#125;&#125;&gt;</span><br><span class="line">          &lt;Text style=&#123;&#123;margin:10, fontSize: 15,color:&apos;red&apos;, textAlign:&apos;center&apos;&#125;&#125;&gt;</span><br><span class="line">            导航功能标题栏</span><br><span class="line">          &lt;/Text&gt;</span><br><span class="line">          &lt;Text style=&#123;&#123;margin:10, marginLeft: 20, fontSize: 15, color:&apos;#fff&apos;,textAlign:&apos;left&apos;&#125;&#125;&gt;</span><br><span class="line">            1.功能一</span><br><span class="line">          &lt;/Text&gt;</span><br><span class="line">          &lt;Text style=&#123;&#123;margin:10,marginLeft: 20, fontSize: 15, color:&apos;#fff&apos;, textAlign:&apos;left&apos;&#125;&#125;&gt;</span><br><span class="line">            2.功能二</span><br><span class="line">          &lt;/Text&gt;</span><br><span class="line">        &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">    return (</span><br><span class="line">        &lt;DrawerLayoutAndroid drawerWidth = &#123;150&#125;</span><br><span class="line">          drawerPosition = &#123;DrawerLayoutAndroid.positions.Left&#125;</span><br><span class="line">          renderNavigationView = &#123;() =&gt; navigatiobView&#125;&gt;</span><br><span class="line">          &lt;View style=&#123;&#123;flex:1,alignItems:&apos;center&apos;&#125;&#125;&gt;</span><br><span class="line">            &lt;Text style=&#123;&#123;margin:10, fontSize:15,textAlign: &apos;right&apos;&#125;&#125;&gt;主布局界面内容&lt;/Text&gt;</span><br><span class="line">          &lt;/View&gt;</span><br><span class="line">         &lt;/DrawerLayoutAndroid&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">AppRegistry.registerComponent(&apos;RNAppDrawerLayout&apos;, () =&gt; RNAppDrawerLayout);</span><br></pre></td></tr></table></figure></p>
+<p>运行后能看到的效果如下:<br>1.主页面<br><img src="/images/2016-07-1815-10-32.png"><br>2.导航栏<br><img src="/images/2016-07-1815-10-15.png"></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/07/18/React-Native/7-React-Native之DrawerLayoutAndroid控件学习/">7.React-Native之DrawerLayoutAndroid控件学习</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">huangyong</a></p>
+        <p><span>发布时间:</span>2016-07-18, 10:43:00</p>
+        <p><span>最后更新:</span>2016-07-18, 15:11:28</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/07/18/React-Native/7-React-Native之DrawerLayoutAndroid控件学习/" title="7.React-Native之DrawerLayoutAndroid控件学习">ty52u.cn/2016/07/18/React-Native/7-React-Native之DrawerLayoutAndroid控件学习/</a>
+            <span class="copy-path" data-clipboard-text="原文: ty52u.cn/2016/07/18/React-Native/7-React-Native之DrawerLayoutAndroid控件学习/　　作者: huangyong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/07/18/React-Native/8-React-Native之ScrollView组件学习/">
+                    8.React-Native之ScrollView组件学习
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/07/18/React-Native/6-React-Native之ProgressBar控件学习/">
+                    6.React-Native之ProgressBar控件学习
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-DrawerLayoutAndroid组件是对Android-平台的DrawerLayout控件的封装"><span class="toc-number">1.</span> <span class="toc-text">1.DrawerLayoutAndroid组件是对Android 平台的DrawerLayout控件的封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-基本属性方法"><span class="toc-number">2.</span> <span class="toc-text">2.基本属性方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-DrawerLayoutAndroid-使用实例"><span class="toc-number">3.</span> <span class="toc-text">3.DrawerLayoutAndroid 使用实例</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script>
+    yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+</script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"7.React-Native之DrawerLayoutAndroid控件学习　| HuangYong Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'ty52u.cn/2016/07/18/React-Native/7-React-Native之DrawerLayoutAndroid控件学习/';
+            this.page.identifier = '2016/07/18/React-Native/7-React-Native之DrawerLayoutAndroid控件学习/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//ty52u.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/07/18/React-Native/8-React-Native之ScrollView组件学习/" title="上一篇: 8.React-Native之ScrollView组件学习">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/07/18/React-Native/6-React-Native之ProgressBar控件学习/" title="下一篇: 6.React-Native之ProgressBar控件学习">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/07/18/React-Native/8-React-Native之ScrollView组件学习/">8.React-Native之ScrollView组件学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/18/React-Native/7-React-Native之DrawerLayoutAndroid控件学习/">7.React-Native之DrawerLayoutAndroid控件学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/18/React-Native/6-React-Native之ProgressBar控件学习/">6.React-Native之ProgressBar控件学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/15/React-Native/5-React-Native之Image控件学习/">5.React-Native之Image控件学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/14/React-Native/4-React-Native之Text控件学习/">4.React-Native之Text控件学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/13/React-Native/3-React-Native之View控件学习/">3.React-Native之View控件学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/13/React-Native/2-React-Native第一个App/">2.React-Native第一个App</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/12/android开发环境搭建/">android开发环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/12/React-Native/React-Native环境搭建/">React-Native环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/12/atom好用的插件及快捷键/">atom好用的插件及快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/12/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/04/React-学习笔记/">React-学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/18/Express4-Response使用⑤/">Express4-Response使用⑤</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/17/Express-Request使用④/">Express-Request使用④</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/15/Express4-路由功能③/">Express4*路由功能③</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/15/Express4-配置说明②/">Express4.*配置说明②</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/15/ubuntu常用基本命令/">ubuntu常用基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/15/Git基本操作详解/">Git基本操作详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/14/Express 4-简单学习了解①/">Express 4.* 简单学习了解①</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/13/新的开始/">新的开始</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016 huangyong
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.0">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

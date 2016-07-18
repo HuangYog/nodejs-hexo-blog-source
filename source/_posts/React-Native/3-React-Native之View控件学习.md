@@ -126,4 +126,31 @@ AppRegistry.registerComponent('RNAppProject', () => RNAppProject);
 下面根据官网的质料和 {% link 这位老师的质料 http://blog.csdn.net/llew2011/article/details/51068619 %} 得到下面的总结出下面这张地图
 {% img /images/2016-07-1317-01-43.png %}
 
-`申明，本文产考资料为`http://blog.csdn.net/p106786860/article/details/51100811 
+`申明，本文产考资料为`http://blog.csdn.net/p106786860/article/details/51100811
+
+### 3.控件中的style的写法
+在控件中使用style在控制样式时有两种写法如下:
+写法一
+```
+<View style={{flexDirection: 'Row', margin: 20, height: 100}}>
+     <View style={{backgroundColor: 'red', flex:1}}></View>
+ </View>
+```
+写法二
+```
+<View style={styles.view_1}>
+    <View style={styles.view_2}></View>
+</View>
+
+var styles = StyleSheet.create({
+  view_1: {
+      flexDirection: 'row',
+      padding: 20,
+      height: 100
+  },
+  view_2: {
+      backgroundColor: 'red',
+      flex: 1
+  }
+});
+```

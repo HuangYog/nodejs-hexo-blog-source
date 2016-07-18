@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="huangyong" />
+
+
+
+<meta name="description" content="常用插件:terminal-plus – 命令行面板simplified-chinese-menu – atom编辑器简体中文汉化regex-railroad-diagram – 正则表达式图形显示nuclide – facebook 针对atomIDE 的个性化争强minimap – 代码地图minimap-git-diff – 针对 git的代码地图linter – 代码校验的主插件linte">
+<meta property="og:type" content="article">
+<meta property="og:title" content="atom好用的插件及快捷键">
+<meta property="og:url" content="ty52u.cn/2016/07/12/atom好用的插件及快捷键/index.html">
+<meta property="og:site_name" content="HuangYong Blog">
+<meta property="og:description" content="常用插件:terminal-plus – 命令行面板simplified-chinese-menu – atom编辑器简体中文汉化regex-railroad-diagram – 正则表达式图形显示nuclide – facebook 针对atomIDE 的个性化争强minimap – 代码地图minimap-git-diff – 针对 git的代码地图linter – 代码校验的主插件linte">
+<meta property="og:updated_time" content="2016-07-12T06:36:51.197Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="atom好用的插件及快捷键">
+<meta name="twitter:description" content="常用插件:terminal-plus – 命令行面板simplified-chinese-menu – atom编辑器简体中文汉化regex-railroad-diagram – 正则表达式图形显示nuclide – facebook 针对atomIDE 的个性化争强minimap – 代码地图minimap-git-diff – 针对 git的代码地图linter – 代码校验的主插件linte">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternative" href="/atom.xml" title="HuangYong Blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>atom好用的插件及快捷键 | HuangYong Blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        open_in_new: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">huangyong</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">新的开始</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/随笔">随笔</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:hy873872182@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/i/2124234337" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="http://github.com/HuangYog" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa Google" target="_blank" href="mailto:hy873872182@gmail.com" title="Google"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DrawerLayoutAndroid/">DrawerLayoutAndroid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Express/">Express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ProgressBarAndroid/">ProgressBarAndroid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/">React-Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ScrollView/">ScrollView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Text/">Text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/View/">View</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-plugins/">atom-plugins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express4/">express4.*</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-native/">react-native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的Blog/">我的Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">huangyong</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">huangyong</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">新的开始</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/随笔">随笔</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:hy873872182@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/i/2124234337" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="http://github.com/HuangYog" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa Google" target="_blank" href="mailto:hy873872182@gmail.com" title="Google"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-atom好用的插件及快捷键" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/12/atom好用的插件及快捷键/" class="article-date">
+      <time datetime="2016-07-12T06:33:27.000Z" itemprop="datePublished">2016-07-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      atom好用的插件及快捷键
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/日志/">日志</a><a class="article-category-link" href="/categories/日志/笔记/">笔记</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/atom-plugins/">atom-plugins</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/我的Blog/">我的Blog</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>常用插件:<br>terminal-plus – 命令行面板<br>simplified-chinese-menu – atom编辑器简体中文汉化<br>regex-railroad-diagram – 正则表达式图形显示<br>nuclide – facebook 针对atomIDE 的个性化争强<br>minimap – 代码地图<br>minimap-git-diff – 针对 git的代码地图<br>linter – 代码校验的主插件<br>linter-jshint – 代码校验的js插件<br>highlight-line – 光标所在行高亮<br>highlight-selected – 当前所有字符高亮<br>file-icons – 文件样式图标(个性化)<br>emmet – html 开发神器<br>docblockr – 优秀的代码注释插件<br>color-picker – 颜色选择调试插件<br>atom-beautify – 所有语言的 代码格式化插件<br>autocomplete-* – 代码提示插件(autocomplete-paths 是 路径补全，autocomplete-bibtex github 的markdown提示)<br>git-time-machine – git 修改记录图形显示<br>atom-ternjs – js相关代码提示补全<br>js-hyperclick – js代码跳转(facebook)<br>快捷键<br>文件切换 ctrl-shift-s 保存所有打开的文件 ctrl-shift-o 打开目录 ctrl-\ 显示或隐藏目录树 ctrl-0焦点移到目录树（目录树下，使用a，m，delete来增加，修改和删除） ctrl-t 或 cmd-p 查找文件 ctrl-b 在打开的文件之间切换 ctrl-shift-b 只搜索从上次git commit后修改或者新增的文件</p>
+<p>导航 (等价于上下左右) ctrl-p 前一行 ctrl-n 后一行 ctrl-f 前一个字符 ctrl-b 后一个字符 alt-B, alt-left 移动到单词开始 alt-F, alt-right 移动到单词末尾 cmd-right, ctrl-E 移动到一行结束 cmd-left, ctrl-A 移动到一行开始 cmd-up 移动到文件开始 cmd-down 移动到文件结束 ctrl-g 移动到指定行 row:column 处 cmd-r 在方法之间跳转</p>
+<p>目录树操作 cmd-\ 或者 cmd-k cmd-b 显示(隐藏)目录树 ctrl-0 焦点切换到目录树(再按一次或者Esc退出目录树) a 添加文件 d 将当前文件另存为(duplicate) i 显示(隐藏)版本控制忽略的文件 alt-right 和 alt-left 展开(隐藏)所有目录 ctrl-al-] 和 ctrl-al-[ 同上 ctrl-[ 和 ctrl-] 展开(隐藏)当前目录 ctrl-f 和 ctrl-b 同上 cmd-k h 或者 cmd-k left 在左半视图中打开文件 cmd-k j或者cmd-k down在下半视图中打开文件 cmd-k k 或者cmd-k up 在上半视图中打开文件 cmd-k l 或者 cmd-k right 在右半视图中打开文件 ctrl-shift-C 复制当前文件绝对路径</p>
+<p>书签 cmd-F2 在本行增加书签 F2 跳到当前文件的下一条书签 shift-F2 跳到当前文件的上一条书签 ctrl-F2 列出当前工程所有书签</p>
+<p>选取 ctrl-shift-P 选取至上一行 ctrl-shift-N 选取至下一样 ctrl-shift-B 选取至前一个字符 ctrl-shift-F 选取至后一个字符 alt-shift-B, alt-shift-left 选取至字符开始 alt-shift-F, alt-shift-right 选取至字符结束 ctrl-shift-E, cmd-shift-right 选取至本行结束 ctrl-shift-A, cmd-shift-left 选取至本行开始 cmd-shift-up 选取至文件开始 cmd-shift-down 选取至文件结尾 cmd-A 全选 cmd-L 选取一行，继续按回选取下一行 ctrl-shift-W 选取当前单词</p>
+<p>编辑和删除操作 ctrl-T 使光标前后字符交换 cmd-J 将下一行与当前行合并 ctrl-cmd-up, ctrl-cmd-down 使当前行向上或者向下移动 cmd-shift-D 复制当前行到下一行 cmd-K, cmd-U 使当前字符大写 cmd-K, cmd-L 使当前字符小写 ctrl-shift-K 删除当前行 cmd-backspace 删除到当前行开始 cmd-fn-backspace 删除到当前行结束 ctrl-K 剪切到当前行结束 alt-backspace 或 alt-H 删除到当前单词开始 alt-delete 或 alt-D 删除到当前单词结束 cmd-click 增加新光标 cmd-shift-L 将多行选取改为多行光标 ctrl-shift-up, ctrl-shift-down 增加上（下）一行光标 cmd-D 选取文档中和当前单词相同的下一处 ctrl-cmd-G 选取文档中所有和当前光标单词相同的位置 ctrl-m 相应括号之间，html tag之间等跳转 ctrl-cmd-m 括号(tag)之间文本选取 alt-cmd-. 关闭当前XML/HTML tag ctrl-shift-U 调出切换编码选项</p>
+<p>查找和替换 cmd-F 在buffer中查找 cmd-shift-f 在整个工程中查找</p>
+<p>代码片段 alt-shift-S 查看当前可用代码片段(在~/.atom目录下snippets.cson文件中存放了你定制的snippets)</p>
+<p>自动补齐 ctrl-space 提示补全信息</p>
+<p>折叠 alt-cmd-[ 折叠 alt-cmd-] 展开 alt-cmd-shift-{ 折叠全部 alt-cmd-shift-} 展开全部 cmd-k cmd-N 指定折叠层级 N为层级数</p>
+<p>文件语法高亮 ctrl-shift-L 选择文本类型</p>
+<p>使用Atom进行写作 ctrl-shift-M Markdown预览</p>
+<p>git操作 cmd-alt-Z checkout HEAD 版本 cmd-shift-B 弹出untracked 和 modified文件列表 alt-g down alt-g up 在修改处跳转 alt-G D 弹出diff列表 alt-G O 在github上打开文件 alt-G G 在github上打开项目地址 alt-G B 在github上打开文件blame alt-G H 在github上打开文件history alt-G I 在github上打开issues alt-G R 在github打开分支比较 alt-G C 拷贝当前文件在gihub上的网址</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/07/12/atom好用的插件及快捷键/">atom好用的插件及快捷键</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">huangyong</a></p>
+        <p><span>发布时间:</span>2016-07-12, 14:33:27</p>
+        <p><span>最后更新:</span>2016-07-12, 14:36:51</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/07/12/atom好用的插件及快捷键/" title="atom好用的插件及快捷键">ty52u.cn/2016/07/12/atom好用的插件及快捷键/</a>
+            <span class="copy-path" data-clipboard-text="原文: ty52u.cn/2016/07/12/atom好用的插件及快捷键/　　作者: huangyong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/07/12/React-Native/React-Native环境搭建/">
+                    React-Native环境搭建
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/07/12/hello-world/">
+                    Hello World
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script>
+    yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+</script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"atom好用的插件及快捷键　| HuangYong Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'ty52u.cn/2016/07/12/atom好用的插件及快捷键/';
+            this.page.identifier = '2016/07/12/atom好用的插件及快捷键/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//ty52u.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/07/12/React-Native/React-Native环境搭建/" title="上一篇: React-Native环境搭建">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/07/12/hello-world/" title="下一篇: Hello World">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/07/18/React-Native/8-React-Native之ScrollView组件学习/">8.React-Native之ScrollView组件学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/18/React-Native/7-React-Native之DrawerLayoutAndroid控件学习/">7.React-Native之DrawerLayoutAndroid控件学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/18/React-Native/6-React-Native之ProgressBar控件学习/">6.React-Native之ProgressBar控件学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/15/React-Native/5-React-Native之Image控件学习/">5.React-Native之Image控件学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/14/React-Native/4-React-Native之Text控件学习/">4.React-Native之Text控件学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/13/React-Native/3-React-Native之View控件学习/">3.React-Native之View控件学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/13/React-Native/2-React-Native第一个App/">2.React-Native第一个App</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/12/android开发环境搭建/">android开发环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/12/React-Native/React-Native环境搭建/">React-Native环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/12/atom好用的插件及快捷键/">atom好用的插件及快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/12/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/04/React-学习笔记/">React-学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/18/Express4-Response使用⑤/">Express4-Response使用⑤</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/17/Express-Request使用④/">Express-Request使用④</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/15/Express4-路由功能③/">Express4*路由功能③</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/15/Express4-配置说明②/">Express4.*配置说明②</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/15/ubuntu常用基本命令/">ubuntu常用基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/15/Git基本操作详解/">Git基本操作详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/14/Express 4-简单学习了解①/">Express 4.* 简单学习了解①</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/13/新的开始/">新的开始</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016 huangyong
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.0">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
